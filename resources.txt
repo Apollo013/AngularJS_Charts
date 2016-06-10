@@ -1,0 +1,14 @@
+https://www.sitepoint.com/using-requirejs-angularjs-applications/
+Using RequireJS in AngularJS Applications
+Ravi
+
+https://www.youtube.com/watch?v=urt81zwHDlI
+Basics of Require JS - Part 1 - 4
+Jesse Warden
+
+http://www.c-sharpcorner.com/article/angularjs-from-beginning-automatic-workflow-part-fifteen/
+AngularJS From Beginning: Automatic Workflow - Part 15
+Debasis Saha
+
+
+http://www.highcharts.com/demo/sparkline

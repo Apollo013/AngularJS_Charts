@@ -1,0 +1,106 @@
+﻿<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title ng-bind="page.title"></title> <!--ng-bind="page.title"-->
+    <meta name="description" content="" />
+    <meta name="Author" content="Paul Millar" />
+    <base href="/index.html">
+
+    <!-- mobile settings -->
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+
+    <!-- WEB FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&amp;subset=latin,latin-ext,cyrillic,cyrillic-ext" rel="stylesheet" type="text/css" />
+
+    <!-- CORE CSS -->
+    <link href="assets/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+
+    <!-- THEME CSS -->
+    <link href="assets/css/essentials.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css" />
+
+</head>
+<!--
+    .boxed = boxed version
+-->
+<body>
+
+
+    <!-- WRAPPER -->
+    <div id="wrapper" class="clearfix">
+
+        <!-- ASIDE -->
+        <aside id="aside">
+            <!--
+                Always open:
+                <li class="active alays-open">
+
+                LABELS:
+                    <span class="label label-danger pull-right">1</span>
+                    <span class="label label-default pull-right">1</span>
+                    <span class="label label-warning pull-right">1</span>
+                    <span class="label label-success pull-right">1</span>
+                    <span class="label label-info pull-right">1</span>
+            -->
+            <nav id="sideNav">
+                <!-- MAIN MENU -->
+                <ul class="nav nav-list">
+                    <li class="active">
+                        <a class="dashboard" href="/linecharts">
+                            <i class="main-icon fa fa-line-chart"></i> <span>Line Charts</span>
+                        </a>
+                    </li>
+                    <li>
+                        <!--id="search-list-item"-->
+                        <a class="" href="/barcharts">
+                            <i class="main-icon fa fa-bar-chart"></i> <span>Bar Charts</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dashboard" href="/piecharts">
+                            <i class="main-icon fa fa-pie-chart"></i> <span>Pie Charts</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <span id="asidebg"><!-- aside fixed background --></span>
+        </aside>
+        <!-- /ASIDE -->
+
+        <!-- HEADER -->
+        <header id="header">
+
+            <!-- Mobile Button -->
+            <button id="mobileMenuBtn"></button>
+
+            <!-- Logo -->
+            <span class="logo pull-left">
+                <img src="assets/images/logo_light.png" alt="admin panel" height="35" />
+            </span>
+
+        </header>
+        <!-- /HEADER -->
+
+        <!-- MIDDLE -->
+        <section id="middle" class="padding-top-50">
+            <header id="page-header">
+                <h1 ng-bind="page.subTitle"></h1>
+                
+                <ol class="breadcrumb">
+                    <li><span ng-bind="page.description"></span></li>
+                </ol>
+            </header>
+            <div ng-view></div>
+        </section>
+        <!-- /MIDDLE -->
+
+    </div>
+
+    <script src="assets/plugins/require/require.js" data-main="app/core/requireConfig.js"></script>
+
+</body>
+</html>

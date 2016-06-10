@@ -1,0 +1,20 @@
+----------------------------------------------------------------
+line 19 added 
+function isEmpty(obj) {
+    for (var key in obj) {
+        if (obj.hasOwnProperty(key))
+            return false;
+    }
+    return true;
+}
+---------------------------------------------------------------
+moved Browser Detect to line 27
+---------------------------------------------------------------
+line 66 blocked loadScript statement
+---------------------------------------------------------------
+Init procedure - commented several method calls
+---------------------------------------------------------------
+line 1635, changed 'window.width' to 'jQuery(window).width()'
+---------------------------------------------------------------
+
+

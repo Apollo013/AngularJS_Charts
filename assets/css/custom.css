@@ -1,0 +1,109 @@
+﻿/** Green	# 4b5354 # 23272D
+			# 5a6667 # 181B1F
+ **************************************************************** **/
+	::selection {
+		background: #23272D;
+	}
+	::-moz-selection {
+		background: #23272D; /* Firefox */
+	}
+	::-webkit-selection {
+		background: #23272D; /* Safari */
+	}
+
+
+	#aside nav ul li a:active,
+	#aside nav ul li.menu-open,
+	#aside nav ul li.always-open,
+	#aside nav>ul>li>a:hover,
+	#aside nav>ul>li>a:focus,
+	#aside nav ul li.active,
+	.fancy-file-upload.fancy-file-primary>span.button,
+	.datepicker table tr td.active.active,
+	.btn-primary,
+	
+
+	/*.toast-primary,*/
+	.popular .plan-title,
+	body.min #aside ul.nav>li>ul li,
+	body.min #aside ul.nav li.menu-open,
+	body.min #aside ul.nav>li:hover>ul,
+	#aside nav ul li a.dashboard,
+	#aside .logo,
+	body.min #asidesize,
+	#aside, #asidebg {
+		background-color: #181B1F;
+	}
+	
+    #header {
+        background-color: #5D9CEC;
+    }
+
+	body.min #aside ul.nav>li:hover:before {
+		border-right-color: #181B1F;
+	}
+
+	.panel>.panel-heading strong {
+		color:#23272D;
+	}
+	
+	.btn-primary {
+		border-color:#23272D;
+	}
+
+	.popular {
+		border-color:#181B1F !important;
+	}
+	
+	/**
+		IMPORTANT
+	**/
+	.btn-primary,
+	.alert-theme-color,
+	.panel-primary>.panel-heading {
+		background-color: #23272D !important;
+	}
+	.panel-primary,
+	.panel-primary>.panel-heading {
+		border-color: #23272D !important;
+	}
+	
+
+    /**********************************************
+    HEADER - SEARCH INPUT
+    **********************************************/
+    #header form.search {
+        width: 50%;
+    }
+
+    #header form.search > input::-moz-placeholder {
+	    color:#FFF;
+	    opacity:0.5;
+    }
+
+    #header form.search > input:-ms-input-placeholder {
+	    color:#FFF;
+	    opacity:0.5;
+    }
+
+    #header form.search > input::-webkit-input-placeholder {
+	    color:#FFF;
+	    opacity:0.5;
+    }
+
+
+    /**********************************************
+    HEADER - USER
+    **********************************************/
+    #header .user-name {
+        color:#FFF !important;
+    } 
+
+
+	@media only screen and (min-width: 768px) {
+		body.min #aside ul.nav>li:hover>a span {
+			background-color: #181B1F;
+		}
+	}
+
+

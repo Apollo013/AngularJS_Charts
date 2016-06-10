@@ -1,0 +1,9 @@
+﻿<ul class="easypiecharts list-unstyled">
+    <li class="clearfix" ng-repeat="salesStat in datasource">
+        <span class="stat-number">{{ salesStat.title }}</span>
+        <span class="stat-title">{{ salesStat.subtitle }}</span>
+        <span class="easyPieChart" data-percent="{{ salesStat.percent }}" data-easing="easeOutBounce" data-barColor="#0058AA" data-trackColor="#dddddd" data-scaleColor="#dddddd" data-size="60" data-lineWidth="4">
+            <span class="percent"></span>
+        </span>
+    </li>
+</ul>
