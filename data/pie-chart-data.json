@@ -2,19 +2,53 @@
   "donutData": [
     {
       "value": 70,
-      "label": "foo"
+      "label": "Product A"
     },
     {
       "value": 15,
-      "label": "bar"
+      "label": "Product B"
     },
     {
       "value": 10,
-      "label": "baz"
+      "label": "Product C"
     },
     {
       "value": 5,
-      "label": "A really really long label"
+      "label": "Product D"
+    }
+  ],
+  "flotPieData": [
+    {
+      "label": "Series1",
+      "data": 93
+    },
+    {
+      "label": "Series2",
+      "data": 46
+    },
+    {
+      "label": "Series3",
+      "data": 72
+    },
+    {
+      "label": "Series4",
+      "data": 38
+    },
+    {
+      "label": "Series5",
+      "data": 54
+    },
+    {
+      "label": "Series6",
+      "data": 20
+    },
+    {
+      "label": "Series7",
+      "data": 72
+    },
+    {
+      "label": "Series8",
+      "data": 59
     }
   ]
 }

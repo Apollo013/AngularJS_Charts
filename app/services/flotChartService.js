@@ -141,6 +141,43 @@ define(function () {
 
 
         /// ---------------------------------------------------------------------------------
+        /// DEFAULT OPTIONS FOR PIE CHART
+        /// ---------------------------------------------------------------------------------
+        var defaultPieChartOptions = {
+            series: {
+                pie: {
+                    show: true,
+                    innerRadius: 0.5,
+                    radius: 1,
+                    label: {
+                        show: false,
+                        radius: 2 / 3,
+                        formatter: function (label, series) {
+                            return '<div style="font-size:11px;text-align:center;padding:4px;color:white;">' + label + '<br/>' + Math.round(series.percent) + '%</div>';
+                        },
+                        threshold: 0.1
+                    }
+                }
+            },
+            legend: {
+                show: true,
+                noColumns: 1, // number of colums in legend table
+                labelFormatter: null, // fn: string -> string
+                labelBoxBorderColor: "#000", // border color for the little label boxes
+                container: null, // container (as jQuery object) to put legend in, null means default on top of graph
+                position: "ne", // position of default legend container within plot
+                margin: [5, 10], // distance from grid edge to default legend container within plot
+                backgroundColor: "#efefef", // null means auto-detect
+                backgroundOpacity: 1 // set to 0 to avoid background
+            },
+            grid: {
+                hoverable: true,
+                clickable: true
+            }
+        };
+
+
+        /// ---------------------------------------------------------------------------------
         /// LINE CHART (COMPARISON)
         /// ---------------------------------------------------------------------------------
         var createLineChart = function (elem, data, options) {
@@ -197,49 +234,60 @@ define(function () {
 
 
         /// ---------------------------------------------------------------------------------
+        /// PIE CHART
+        /// ---------------------------------------------------------------------------------
+        var createPieChart = function (elem, data, options) {
+            injectPlugins().then(
+                function (response) {
+                    // EXTEND OPTIONS
+                    var newOptions = {};
+                    if (!isEmpty(options)) {
+                        angular.extend(newOptions, defaultPieChartOptions, options);
+                    }
+                    else {
+                        angular.extend(newOptions, defaultPieChartOptions);
+                    }
+
+                    // CREATE CHART
+                    plotChart(elem, data, newOptions);
+                }
+            );
+        };
+
+        /// ---------------------------------------------------------------------------------
         /// BAR CHART (VERTICAL)
         /// ---------------------------------------------------------------------------------
         var createBarChart = function (elem, data, options) {
-            var defered = $q.defer();
-
-            if (elem === '' || isEmpty(data)) {
-                defered.reject('Missing element name or data');
-                return;
-            }
-            else {
-                injectPlugins().then(
-                    function (response) {
-                        // EXTEND OPTIONS
-                        var newOptions = {};
-                        if (!isEmpty(options)) {
-                            angular.extend(newOptions, defaultBarChartOptions, options);
-                        }
-                        else {
-                            angular.extend(newOptions, defaultBarChartOptions);
-                        }
-
-                        // SET BAR DATA
-                        var dataset = new Array(), count = 1;
-                        angular.forEach(data, function (dataArray, idx) {
-                            dataset.push({
-                                label: 'Product ' + count,
-                                data: dataArray,
-                                bars: {
-                                    lineWidth: 1,
-                                    order: count
-                                }
-                            });
-                            count++;
-                        });
-
-                        // CREATE CHART
-                        plotChart(elem, dataset, newOptions);
-                        bindTooltip(elem);
-                        defered.resolve();
+            injectPlugins().then(
+                function (response) {
+                    // EXTEND OPTIONS
+                    var newOptions = {};
+                    if (!isEmpty(options)) {
+                        angular.extend(newOptions, defaultBarChartOptions, options);
                     }
-                );
-            }
-            return defered.promise;
+                    else {
+                        angular.extend(newOptions, defaultBarChartOptions);
+                    }
+
+                    // SET BAR DATA
+                    var dataset = new Array(), count = 1;
+                    angular.forEach(data, function (dataArray, idx) {
+                        dataset.push({
+                            label: 'Product ' + count,
+                            data: dataArray,
+                            bars: {
+                                lineWidth: 1,
+                                order: count
+                            }
+                        });
+                        count++;
+                    });
+
+                    // CREATE CHART
+                    plotChart(elem, dataset, newOptions);
+                    bindTooltip(elem);
+                }
+            );
         };
 
 
@@ -376,6 +424,7 @@ define(function () {
         service.createAreaChart = createAreaChart;
         service.createBarChart = createBarChart;
         service.createHozBarChart = createHozBarChart;
+        service.createPieChart = createPieChart;
         return service;
     }
 
