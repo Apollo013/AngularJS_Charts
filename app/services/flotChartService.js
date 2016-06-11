@@ -34,6 +34,42 @@ define(function () {
             series: {
                 lines: {
                     show: true,
+                    lineWidth: 1
+                },
+                shadowSize: 0
+            },
+            selection: {
+                mode: "x"
+            },
+            grid: {
+                hoverable: true,
+                clickable: true,
+                tickColor: colours.border,
+                borderWidth: 0,
+                borderColor: colours.border
+            },
+            tooltip: true,
+            tooltipOpts: {
+                //content: "Sales: %x <span class='block'>%y</span>",
+                content: "Units Sold: %y",
+                dateFormat: "%y-%0m-%0d",
+                defaultTheme: false
+            },
+            colors: [colours.red, colours.blue]
+        };
+
+
+        /// ---------------------------------------------------------------------------------
+        /// DEFAULT OPTIONS FOR AREA CHART (fill & fillColour)
+        /// ---------------------------------------------------------------------------------
+        var defaultAreaChartOptions = {
+            xaxis: {
+                ticks: monthTicks,
+                tickLength: 0
+            },
+            series: {
+                lines: {
+                    show: true,
                     lineWidth: 1,
                     fill: true,
                     fillColor: {
@@ -81,7 +117,7 @@ define(function () {
                 clickable: true,
                 tickColor: colours.border,
                 borderWidth: 0,
-                borderColor: colours.border,
+                borderColor: colours.border
             },
             tooltip: false,
             tooltipOpts: {
@@ -110,7 +146,7 @@ define(function () {
         var createLineChart = function (elem, data, options) {
             var defered = $q.defer();
 
-            if (elem == '' || isEmpty(data)) {
+            if (elem === '' || isEmpty(data)) {
                 defered.reject('Missing element name or data');
             }
             else {
@@ -133,12 +169,40 @@ define(function () {
 
 
         /// ---------------------------------------------------------------------------------
+        /// AREA CHART (COMPARISON)
+        /// ---------------------------------------------------------------------------------
+        var createAreaChart = function (elem, data, options) {
+            var defered = $q.defer();
+
+            if (elem === '' || isEmpty(data)) {
+                defered.reject('Missing element name or data');
+            }
+            else {
+                injectPlugins().then(function () {
+                    // EXTEND OPTIONS
+                    var newOptions = {};
+                    if (!isEmpty(options)) {
+                        angular.extend(newOptions, defaultAreaChartOptions, options);
+                    }
+                    else {
+                        angular.extend(newOptions, defaultAreaChartOptions);
+                    }
+                    // CREATE CHART
+                    plotChart(elem, data, newOptions);
+                    defered.resolve();
+                });
+            }
+            return defered.promise;
+        };
+
+
+        /// ---------------------------------------------------------------------------------
         /// BAR CHART (VERTICAL)
         /// ---------------------------------------------------------------------------------
         var createBarChart = function (elem, data, options) {
             var defered = $q.defer();
 
-            if (elem == '' || isEmpty(data)) {
+            if (elem === '' || isEmpty(data)) {
                 defered.reject('Missing element name or data');
                 return;
             }
@@ -162,7 +226,7 @@ define(function () {
                                 data: dataArray,
                                 bars: {
                                     lineWidth: 1,
-                                    order: count,
+                                    order: count
                                 }
                             });
                             count++;
@@ -185,7 +249,7 @@ define(function () {
         var createHozBarChart = function (elem, data, options) {
             var defered = $q.defer();
 
-            if (elem == '' || isEmpty(data)) {
+            if (elem === '' || isEmpty(data)) {
                 defered.reject('Missing element name or data');
                 return;
             }
@@ -210,7 +274,7 @@ define(function () {
                                 bars: {
                                     horizontal: true,
                                     lineWidth: 1,
-                                    order: count,
+                                    order: count
                                 }
                             });
                             count++;
@@ -235,7 +299,7 @@ define(function () {
         var bindTooltip = function (elem, hoz) {
             $(elem).bind("plothover", function (event, pos, item) {
                 if (item) {
-                    if ((previousLabel != item.series.label) || (previousPoint != item.dataIndex)) {
+                    if (previousLabel !== item.series.label || previousPoint !== item.dataIndex) {
                         previousPoint = item.dataIndex;
                         previousLabel = item.series.label;
                         $("#tooltip").remove();
@@ -308,11 +372,12 @@ define(function () {
         /// CREATE & RETURN A SERVICE OBJECT
         /// ---------------------------------------------------------------------------------
         var service = {};
-        service.createLineChart = createLineChart;        
+        service.createLineChart = createLineChart;
+        service.createAreaChart = createAreaChart;
         service.createBarChart = createBarChart;
         service.createHozBarChart = createHozBarChart;
         return service;
-    };
+    }
 
 
     /// ---------------------------------------------------------------------------------

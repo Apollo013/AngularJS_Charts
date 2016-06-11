@@ -49,10 +49,10 @@ define(function () {
                     }
                     else {
                         defered.reject();
-                    };
+                    }
 
                     defered.reject();
-                };
+                }
             });
             return defered.promise;
         };
@@ -76,7 +76,7 @@ define(function () {
         var service = {};
         service.createStatCharts = createStatCharts;
         return service;
-    };
+    }
 
 
     /// ---------------------------------------------------------------------------------

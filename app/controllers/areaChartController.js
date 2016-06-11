@@ -1,17 +1,14 @@
 ﻿define(function () {
     angular
     .module('app')
-    .registerController('LineChartController', ['$scope', '$q', 'DataService', 'FlotChartService', 'EasyPieChartService', 'ChartJSService', 'MorrisChartService',
+    .registerController('AreaChartController',['$scope', '$q', 'DataService', 'FlotChartService', 'EasyPieChartService', 'ChartJSService', 'MorrisChartService',
             
         function ($scope, $q, DataService, FlotChartService, EasyPieChartService, ChartJSService, MorrisChartService) {
             /// ---------------------------------------------------------------------------------
-            /// LOCAL VARIABLE FOR STORING DATA FROM JSON FILE
+            /// LOCAL VARIABLES FOR STORING DATA FROM JSON FILE
             /// ---------------------------------------------------------------------------------
             $scope.data = {};
-            $scope.yearData = [];
-            $scope.decimalData = [];
-            $scope.timeData = [];
-            $scope.nonConData = [];
+            $scope.appleData = [];
 
 
             /// ---------------------------------------------------------------------------------
@@ -19,19 +16,11 @@
             /// ---------------------------------------------------------------------------------
             var getData = function () {
                 var defered = $q.defer();
-                DataService.getLineChartData().then(
+                DataService.getAreaChartData().then(
                     function (response) {
                         $scope.data = response.data.data;
                         $scope.stats = response.data.stats;
-                        $scope.yearData = response.data.yearData;
-                        $scope.timeData = response.data.timeData;
-                        $scope.nonConData = response.data.nonConData;
-
-                        // CREATE DECIAML DATA FOR MORRIS DECIMAL GRAPH
-                        for (var x = 0; x <= 360; x += 10) {
-                            $scope.decimalData.push({ x: x, y: Math.sin(Math.PI * x / 180).toFixed(4) });
-                        }
-
+                        $scope.appleData = response.data.apple;
                         defered.resolve();
                     },
                     function (error) {
@@ -47,12 +36,12 @@
             /// FLOT CHART
             /// ---------------------------------------------------------------------------------
             var createFlotChart = function () {
-                FlotChartService.createLineChart("#flot-sales", $scope.data);
+                FlotChartService.createAreaChart("#flot-sales", $scope.data);
             };
 
 
             /// ---------------------------------------------------------------------------------
-            /// EASY-PIE CHARTS (uses a directive)
+            /// EASY PIE CHARTS (EASY-PIE CHARTS) (uses a directive)
             /// ---------------------------------------------------------------------------------
             var createEasyPieCharts = function () {
                 EasyPieChartService.createStatCharts();
@@ -62,7 +51,7 @@
             /// ---------------------------------------------------------------------------------
             /// CHART JS
             /// ---------------------------------------------------------------------------------
-            createChartJS = function () {
+            var createChartJS = function () {
                 // Rearrange the data so that chartjs can work with it
 
                 // Vars
@@ -72,7 +61,7 @@
                 // Rearrange Data
                 angular.forEach($scope.data[0].data, function (obj, idx) {
                     data1.data.push(obj[1]);
-                }); 
+                });
                 angular.forEach($scope.data[1].data, function (obj, idx) {
                     data2.data.push(obj[1]);
                 });
@@ -86,39 +75,15 @@
                 dataset.push(data2);
 
                 // Create Chart
-                ChartJSService.createLineChart("lineChartCanvas", dataset);
+                ChartJSService.createAreaChart("areaChartCanvas", dataset);
             };
 
 
             /// ---------------------------------------------------------------------------------
-            /// MORRIS YEAR CHART
+            /// MORRIS CHART
             /// ---------------------------------------------------------------------------------
-            var createMorrisYearChart = function () {
-                MorrisChartService.createYearLineChart('morris-year-graph', $scope.yearData);
-            };
-
-
-            /// ---------------------------------------------------------------------------------
-            /// MORRIS DECIMAL CHART
-            /// ---------------------------------------------------------------------------------
-            var createMorrisDecimalChart = function () {
-                MorrisChartService.createDecimalLineChart('morris-decimal-graph', $scope.decimalData);
-            };
-
-
-            /// ---------------------------------------------------------------------------------
-            /// MORRIS TIME CHART
-            /// ---------------------------------------------------------------------------------
-            var createMorrisTimeChart = function () {
-                MorrisChartService.createTimeLineChart('morris-time-graph', $scope.timeData);
-            };
-
-
-            /// ---------------------------------------------------------------------------------
-            /// MORRIS NON-CONTINUOUS CHART
-            /// ---------------------------------------------------------------------------------
-            var createMorrisNonContinuousChart = function () {
-                MorrisChartService.createNonContinuousLineChart('morris-non-continue-graph', $scope.nonConData);
+            var createMorrisChart = function () {
+                MorrisChartService.createAreaChart('morris-graph', $scope.appleData);
             };
 
 
@@ -130,12 +95,9 @@
                     createFlotChart();
                     createEasyPieCharts();
                     createChartJS();
-                    createMorrisYearChart();
-                    createMorrisDecimalChart();
-                    createMorrisTimeChart();
-                    createMorrisNonContinuousChart();
+                    createMorrisChart();
                 }
             );
-        }
+        }            
     ]);
 });

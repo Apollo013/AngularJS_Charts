@@ -34,12 +34,30 @@ define(function () {
 
 
         /// --------------------------------------------------------------------------
+        /// AREA CHART DATA
+        /// --------------------------------------------------------------------------
+        var getAreaChartData = function () {
+            return $http.get(dataUrl + 'area-chart-data.json');
+        };
+
+
+        /// --------------------------------------------------------------------------
+        /// PIE CHART DATA
+        /// --------------------------------------------------------------------------
+        var getPieChartData = function () {
+            return $http.get(dataUrl + 'pie-chart-data.json');
+        };
+
+
+        /// --------------------------------------------------------------------------
         /// CREATE & RETURN A SERVICE OBJECT
         /// --------------------------------------------------------------------------
         var service = {};
         service.getLineChartData = getLineChartData;
+        service.getAreaChartData = getAreaChartData;
         service.getBarChartData = getBarChartData;
         service.getHozBarChartData = getHozBarChartData;
+        service.getPieChartData = getPieChartData;
         return service;
     }
 

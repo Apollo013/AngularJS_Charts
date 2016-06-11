@@ -43,9 +43,34 @@ define([], function () {
             }
         })
         .when('/piecharts', {
-            title: 'Bar Charts',
+            title: 'Pie Charts',
             description: 'A combination of Flot Charts & Easy-Pie Charts',
-            templateUrl: 'views/pieCharts.html'
+            templateUrl: 'views/pieCharts.html',
+            controller: 'PieChartController',
+            resolve: {
+                load: ['$q', function ($q) {
+                    var defered = $q.defer();
+                    require(['../controllers/pieChartController'], function () {
+                        defered.resolve();
+                    });
+                    return defered.promise;
+                }]
+            }
+        })
+        .when('/areacharts', {
+            title: 'Area Charts',
+            description: 'A combination of Flot Charts & Easy-Pie Charts',
+            templateUrl: 'views/areaCharts.html',
+            controller: 'AreaChartController',
+            resolve: {
+                load: ['$q', function ($q) {
+                    var defered = $q.defer();
+                    require(['../controllers/areaChartController'], function () {
+                        defered.resolve();
+                    });
+                    return defered.promise;
+                }]
+            }
         })
         .otherwise({ redirectTo: '/linecharts' });
 
@@ -60,7 +85,7 @@ define([], function () {
     /// ---------------------------------------------------------------------------------
     /// INJECT DEPENDENCIES    
     /// ---------------------------------------------------------------------------------
-    config.$inject = ['$routeProvider', '$locationProvider']
+    config.$inject = ['$routeProvider', '$locationProvider'];
 
     /// ---------------------------------------------------------------------------------
     /// RETURN CONFIG OBJECT    

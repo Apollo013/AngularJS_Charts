@@ -6,9 +6,10 @@ define(['routeConfig',
         '../services/flotChartService',
         '../services/easypieChartService',
         '../services/chartJSService',
-        '../directives/easypieStatDirective'],
+        '../directives/easypieStatDirective',
+        '../services/morrisChartService'],
 
-    function (routes, appRunners, dataService, flotChartService, easypieChartService, chartJSService, easypieStatDirective) {
+    function (routes, appRunners, dataService, flotChartService, easypieChartService, chartJSService, easypieStatDirective, morrisChartService) {
 
         /// ---------------------------------------------------------------------------------
         /// THIS IS OUR MAIN MODULE
@@ -38,8 +39,9 @@ define(['routeConfig',
         app.factory('FlotChartService', flotChartService);
         app.factory('EasyPieChartService', easypieChartService);
         app.factory('ChartJSService', chartJSService);
-        
+        app.factory('MorrisChartService', morrisChartService);
 
+        
         /// ---------------------------------------------------------------------------------
         /// DIRECTIVES
         /// ---------------------------------------------------------------------------------
