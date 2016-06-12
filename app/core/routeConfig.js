@@ -44,7 +44,7 @@ define([], function () {
         })
         .when('/piecharts', {
             title: 'Pie Charts',
-            description: 'Pie charts using Flot Charts, Morris Charts & ChartJS',
+            description: 'Pie charts using Easy-Pie Charts, Flot Charts, Morris Charts & ChartJS',
             templateUrl: 'views/pieCharts.html',
             controller: 'PieChartController',
             resolve: {
@@ -59,7 +59,7 @@ define([], function () {
         })
         .when('/areacharts', {
             title: 'Area Charts',
-            description: 'Area charts using Flot Charts, Morris Charts, ChartJS & Easy-Pie Charts',
+            description: 'Area charts using Flot Charts, Morris Charts & ChartJS with some Easy-Pie Charts',
             templateUrl: 'views/areaCharts.html',
             controller: 'AreaChartController',
             resolve: {

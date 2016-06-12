@@ -41,10 +41,10 @@
 
 
             /// ---------------------------------------------------------------------------------
-            /// EASY PIE CHARTS (EASY-PIE CHARTS) (uses a directive)
+            /// EASY PIE CHARTS (uses a directive)
             /// ---------------------------------------------------------------------------------
             var createEasyPieCharts = function () {
-                EasyPieChartService.createStatCharts();
+                EasyPieChartService.createPieCharts();
             };
 
 

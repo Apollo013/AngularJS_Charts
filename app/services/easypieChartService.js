@@ -11,9 +11,9 @@ define(function () {
 
 
         /// ---------------------------------------------------------------------------------
-        /// STAT CHARTS
+        /// PIE CHARTS
         /// ---------------------------------------------------------------------------------
-        var createStatCharts = function () {
+        var createPieCharts = function () {
             var defered = $q.defer();
 
             injectPlugins().then(function () {
@@ -74,7 +74,7 @@ define(function () {
         /// CREATE & RETURN A SERVICE OBJECT
         /// ---------------------------------------------------------------------------------
         var service = {};
-        service.createStatCharts = createStatCharts;
+        service.createPieCharts = createPieCharts;
         return service;
     }
 

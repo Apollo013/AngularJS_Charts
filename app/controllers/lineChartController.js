@@ -55,7 +55,7 @@
             /// EASY-PIE CHARTS (uses a directive)
             /// ---------------------------------------------------------------------------------
             var createEasyPieCharts = function () {
-                EasyPieChartService.createStatCharts();
+                EasyPieChartService.createPieCharts();
             };
 
 
