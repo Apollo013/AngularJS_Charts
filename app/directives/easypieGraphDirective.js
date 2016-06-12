@@ -1,19 +1,17 @@
 ﻿define(function () {
 
-    function easypieStat($compile) {
+    function easypieGraph() {
         return {
-            restrict: 'EA',
+            restrict: "EA",
             scope: {
                 datasource: '='
             },
-            templateUrl:'views/partials/easypieStat.html'
+            templateUrl: 'views/partials/easypieGraph.html'
         };
     }
 
-
     /// --------------------------------------------------------------------------
-    /// INJECT ANGULAR MODULES & RETURN DIRECTIVE OBJECT
+    /// RETURN DIRECTIVE OBJECT
     /// --------------------------------------------------------------------------
-    easypieStat.$inject = ['$compile'];
-    return easypieStat;
+    return easypieGraph;
 });

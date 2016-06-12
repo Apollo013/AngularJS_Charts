@@ -119,8 +119,61 @@
   ],
   "jsRadarData": {
     "datasets": [
-      { "data": [ 65, 59, 90, 81, 56, 55, 40 ] , "label": "Set 1"},
-      { "data": [ 28, 48, 40, 19, 96, 27, 100 ], "label" : "Set 2" }
+      {
+        "data": [ 65, 59, 90, 81, 56, 55, 40 ],
+        "label": "Set 1"
+      },
+      {
+        "data": [ 28, 48, 40, 19, 96, 27, 100 ],
+        "label": "Set 2"
+      }
     ]
-  }
+  },
+  "easyPieData": [
+    {
+      "percent": 86,
+      "easing": "easeOutBounce",
+      "barColor": "#D9534F",
+      "trackColor": "#dddddd",
+      "scaleColor": "#dddddd",
+      "size": 180,
+      "lineWidth": 20
+    },
+    {
+      "percent": 72,
+      "easing": "easeOutBounce",
+      "barColor": "#5CB85C",
+      "trackColor": "#dddddd",
+      "scaleColor": "#dddddd",
+      "size": 130,
+      "lineWidth": 15
+    },
+    {
+      "percent": 65,
+      "easing": "easeOutBounce",
+      "barColor": "#687482",
+      "trackColor": "#dddddd",
+      "scaleColor": "#dddddd",
+      "size": 100,
+      "lineWidth": 6
+    },
+    {
+      "percent": 94,
+      "easing": "easeOutBounce",
+      "barColor": "#B19A6B",
+      "trackColor": "#dddddd",
+      "scaleColor": "#dddddd",
+      "size": 80,
+      "lineWidth": 4
+    },
+    {
+      "percent": 58,
+      "easing": "easeOutBounce",
+      "barColor": "#ef1e25",
+      "trackColor": "#dddddd",
+      "scaleColor": "#dddddd",
+      "size": 60,
+      "lineWidth": 2
+    }
+  ]
 }

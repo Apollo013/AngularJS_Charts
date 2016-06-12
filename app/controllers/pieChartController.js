@@ -3,9 +3,9 @@ define(function () {
 
     angular
     .module('app')
-    .registerController('PieChartController', ['$scope', '$q', 'DataService', 'MorrisChartService', 'FlotChartService', 'ChartJSService',
+    .registerController('PieChartController', ['$scope', '$q', 'DataService', 'MorrisChartService', 'FlotChartService', 'ChartJSService', 'EasyPieChartService',
 
-        function ($scope, $q, DataService, MorrisChartService, FlotChartService, ChartJSService) {
+        function ($scope, $q, DataService, MorrisChartService, FlotChartService, ChartJSService, EasyPieChartService) {
 
             /// ---------------------------------------------------------------------------------
             /// LOCAL VARIABLE FOR STORING DATA FROM JSON FILE
@@ -16,6 +16,7 @@ define(function () {
             $scope.jsDonutData = [];
             $scope.jsPieData = [];
             $scope.jsRadarData = {};
+            $scope.easyPieData = [];
 
 
             /// ---------------------------------------------------------------------------------
@@ -25,12 +26,14 @@ define(function () {
                 var defered = $q.defer();
                 DataService.getPieChartData().then(
                     function (response) {
+                        $scope.easyPieData = response.data.easyPieData;
                         $scope.donutData = response.data.donutData;
                         $scope.flotPieData = response.data.flotPieData;
                         $scope.polarData = response.data.polarData;
                         $scope.jsDonutData = response.data.jsDonutData;
                         $scope.jsPieData = response.data.jsPieData;
                         $scope.jsRadarData = response.data.jsRadarData.datasets;
+                        
                         defered.resolve();
                     },
                     function (error) {
@@ -91,10 +94,19 @@ define(function () {
             
             
             /// ---------------------------------------------------------------------------------
+            /// EASY PIE CHARTS (EASY-PIE CHARTS) (uses a directive)
+            /// ---------------------------------------------------------------------------------
+            var createEasyPieCharts = function () {
+                EasyPieChartService.createStatCharts();
+            };
+
+
+            /// ---------------------------------------------------------------------------------
             /// INITIALISE
             /// ---------------------------------------------------------------------------------
             getData().then(
                 function () {
+                    createEasyPieCharts();
                     createRadarChart();
                     createPolarChart();                    
                     createPieChart();

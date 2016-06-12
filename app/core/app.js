@@ -7,19 +7,21 @@ define(['routeConfig',
         '../services/easypieChartService',
         '../services/chartJSService',
         '../directives/easypieStatDirective',
-        '../services/morrisChartService'],
+        '../services/morrisChartService',
+        '../directives/easypieGraphDirective'],
 
-    function (routes, appRunners, dataService, flotChartService, easypieChartService, chartJSService, easypieStatDirective, morrisChartService) {
+    function (routes, appRunners, dataService, flotChartService, easypieChartService, chartJSService, easypieStatDirective, morrisChartService, easypieGraphDirective) {
 
         /// ---------------------------------------------------------------------------------
         /// THIS IS OUR MAIN MODULE
         /// ---------------------------------------------------------------------------------
         var app = angular.module('app', ['ngRoute']);
 
+
         /// ---------------------------------------------------------------------------------
         /// CONSTANTS
         /// ---------------------------------------------------------------------------------
-        app.constant('PluginsPath', '../../assets/plugins/');
+        app.constant('PluginsPath', '../../assets/plugins/'); // Path to plugins
 
 
         /// ---------------------------------------------------------------------------------
@@ -46,8 +48,9 @@ define(['routeConfig',
         /// DIRECTIVES
         /// ---------------------------------------------------------------------------------
         app.directive('easypieStat', easypieStatDirective);
+        app.directive('easypieGraph', easypieGraphDirective);
 
-
+        
         /// ---------------------------------------------------------------------------------
         /// CONFIGURATIONS
         /// ---------------------------------------------------------------------------------

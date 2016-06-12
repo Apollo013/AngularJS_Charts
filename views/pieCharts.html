@@ -1,5 +1,33 @@
 ﻿<div id="content" class="dashboard padding-20">
 
+    <!-- Easy Pie Charts -->
+    <div id="graph-pie-chart" class="panel panel-default">
+
+        <div class="panel-heading">
+
+            <span class="elipsis">
+                <!-- panel title -->
+                <strong>Easy Pie Charts</strong>
+            </span>
+
+            <!-- right options -->
+            <ul class="options pull-right list-inline">
+                <li><a href="#" class="opt panel_colapse" data-toggle="tooltip" title="Colapse" data-placement="bottom"></a></li>
+                <li><a href="#" class="opt panel_fullscreen hidden-xs" data-toggle="tooltip" title="Fullscreen" data-placement="bottom"><i class="fa fa-expand"></i></a></li>
+                <li><a href="#" class="opt panel_close" data-confirm-title="Confirm" data-confirm-message="Are you sure you want to remove this panel?" data-toggle="tooltip" title="Close" data-placement="bottom"><i class="fa fa-times"></i></a></li>
+            </ul>
+            <!-- /right options -->
+
+
+        </div>
+
+        <!-- panel content -->
+        <div easypie-graph class="panel-body" datasource="easyPieData"></div>
+        <!-- /panel content -->
+
+    </div>
+    <!-- /Easy Pie Charts -->
+
     <div class="row">
         <!-- LEFT -->
         <div class="col-md-6">

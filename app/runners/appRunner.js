@@ -34,7 +34,7 @@
         });
 
         /// ---------------------------------------------------------------------------------
-        /// We need to re-bind some of the features that came with the template after
+        /// We need to re-bind some of the features that came with the html template after
         /// every view change.
         /// ---------------------------------------------------------------------------------
         $rootScope.$on('$viewContentLoaded', function () {

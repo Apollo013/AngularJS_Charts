@@ -8,6 +8,7 @@
 /// <reference path="../../../../app/core/requireConfig.js" />
 /// <reference path="../../../../app/core/routeConfig.js" />
 /// <reference path="../../../../app/core/tmplFunctions.js" />
+/// <reference path="../../../../app/directives/easypieGraphDirective.js" />
 /// <reference path="../../../../app/directives/easypieStatDirective.js" />
 /// <reference path="../../../../app/runners/appRunner.js" />
 /// <reference path="../../../../app/services/chartJSService.js" />

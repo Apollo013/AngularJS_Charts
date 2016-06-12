@@ -13,7 +13,7 @@ define([], function () {
         $routeProvider
         .when('/linecharts', {
             title: 'Line Charts',
-            description: 'Line charts using Flot Charts & Chartjs with some Easy-Pie Charts',
+            description: 'Line charts using Flot Charts, Morris Charts & ChartJS with some Easy-Pie Charts',
             templateUrl: 'views/lineCharts.html',
             controller: 'LineChartController',            
             resolve: {
@@ -29,7 +29,7 @@ define([], function () {
         })
         .when('/barcharts', {
             title: 'Bar Charts',
-            description: 'A combination of Flot Charts & Chartjs',
+            description: 'Bar charts using Flot Charts, Morris Charts & ChartJS',
             templateUrl: 'views/barCharts.html',
             controller: 'BarChartController',            
             resolve: {
@@ -44,7 +44,7 @@ define([], function () {
         })
         .when('/piecharts', {
             title: 'Pie Charts',
-            description: 'An assortment of Pie charts using Flot Charts, Morris Charts & ChartJS',
+            description: 'Pie charts using Flot Charts, Morris Charts & ChartJS',
             templateUrl: 'views/pieCharts.html',
             controller: 'PieChartController',
             resolve: {
@@ -59,7 +59,7 @@ define([], function () {
         })
         .when('/areacharts', {
             title: 'Area Charts',
-            description: 'A combination of Flot Charts & Easy-Pie Charts',
+            description: 'Area charts using Flot Charts, Morris Charts, ChartJS & Easy-Pie Charts',
             templateUrl: 'views/areaCharts.html',
             controller: 'AreaChartController',
             resolve: {
