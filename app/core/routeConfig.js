@@ -44,7 +44,7 @@ define([], function () {
         })
         .when('/piecharts', {
             title: 'Pie Charts',
-            description: 'A combination of Flot Charts & Easy-Pie Charts',
+            description: 'An assortment of Pie charts using Flot Charts, Morris Charts & ChartJS',
             templateUrl: 'views/pieCharts.html',
             controller: 'PieChartController',
             resolve: {
@@ -72,7 +72,7 @@ define([], function () {
                 }]
             }
         })
-        .otherwise({ redirectTo: '/linecharts' });
+        .otherwise({ redirectTo: '/areacharts' });
 
         /// ---------------------------------------------------------------------------------
         /// Enable html5Mode for pushstate ('#'-less URLs)

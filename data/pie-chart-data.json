@@ -50,5 +50,77 @@
       "label": "Series8",
       "data": 59
     }
-  ]
+  ],
+  "polarData": [
+    {
+      "value": 62,
+      "color": "#D97041"
+    },
+    {
+      "value": 70,
+      "color": "#C7604C"
+    },
+    {
+      "value": 41,
+      "color": "#21323D"
+    },
+    {
+      "value": 24,
+      "color": "#9D9B7F"
+    },
+    {
+      "value": 55,
+      "color": "#7D4F6D"
+    },
+    {
+      "value": 18,
+      "color": "#584A5E"
+    }
+  ],
+  "jsPieData": [
+    {
+      "value": 30,
+      "color": "#F38630"
+    },
+    {
+      "value": 50,
+      "color": "#E0E4CC"
+    },
+    {
+      "value": 100,
+      "color": "#69D2E7"
+    },
+    {
+      "value": 45,
+      "color": "#1E73BE"
+    }
+  ],
+  "jsDonutData": [
+    {
+      "value": 30,
+      "color": "#F7464A"
+    },
+    {
+      "value": 50,
+      "color": "#46BFBD"
+    },
+    {
+      "value": 100,
+      "color": "#FDB45C"
+    },
+    {
+      "value": 40,
+      "color": "#949FB1"
+    },
+    {
+      "value": 120,
+      "color": "#4D5360"
+    }
+  ],
+  "jsRadarData": {
+    "datasets": [
+      { "data": [ 65, 59, 90, 81, 56, 55, 40 ] , "label": "Set 1"},
+      { "data": [ 28, 48, 40, 19, 96, 27, 100 ], "label" : "Set 2" }
+    ]
+  }
 }

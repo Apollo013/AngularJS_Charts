@@ -3,8 +3,65 @@
     <div class="row">
         <!-- LEFT -->
         <div class="col-md-6">
+
+            <!-- Radar Graph -->
+            <div id="panel-graphs-morris-l1" class="panel panel-default">
+
+                <div class="panel-heading">
+
+                    <span class="elipsis">
+                        <strong>Chart JS</strong>
+                        <small class="size-12 weight-300 text-mutted hidden-xs">RADAR</small>
+                    </span>
+
+                    <!-- right options -->
+                    <ul class="options pull-right list-inline">
+                        <li><a href="#" class="opt panel_colapse" data-toggle="tooltip" title="Colapse" data-placement="bottom"></a></li>
+                        <li><a href="#" class="opt panel_fullscreen hidden-xs" data-toggle="tooltip" title="Fullscreen" data-placement="bottom"><i class="fa fa-expand"></i></a></li>
+                        <li><a href="#" class="opt panel_close" data-confirm-title="Confirm" data-confirm-message="Are you sure you want to remove this panel?" data-toggle="tooltip" title="Close" data-placement="bottom"><i class="fa fa-times"></i></a></li>
+                    </ul>
+                    <!-- /right options -->
+                </div>
+
+                <!-- panel content -->
+                <div class="panel-body nopadding">
+                    <canvas class="chartjs height-400" id="radarChartCanvas"></canvas>
+                </div>
+                <!-- /panel content -->
+
+            </div>
+            <!-- /Radar Graph -->
+
+            <!-- PIE Graph -->
+            <div id="panel-graphs-morris-l3" class="panel panel-default">
+
+                <div class="panel-heading">
+
+                    <span class="elipsis">
+                        <strong>Chart JS</strong>
+                        <small class="size-12 weight-300 text-mutted hidden-xs">PIE</small>
+                    </span>
+
+                    <!-- right options -->
+                    <ul class="options pull-right list-inline">
+                        <li><a href="#" class="opt panel_colapse" data-toggle="tooltip" title="Colapse" data-placement="bottom"></a></li>
+                        <li><a href="#" class="opt panel_fullscreen hidden-xs" data-toggle="tooltip" title="Fullscreen" data-placement="bottom"><i class="fa fa-expand"></i></a></li>
+                        <li><a href="#" class="opt panel_close" data-confirm-title="Confirm" data-confirm-message="Are you sure you want to remove this panel?" data-toggle="tooltip" title="Close" data-placement="bottom"><i class="fa fa-times"></i></a></li>
+                    </ul>
+                    <!-- /right options -->
+                </div>
+
+                <!-- panel content -->
+                <div class="panel-body nopadding">
+                    <canvas class="chartjs height-400" id="pieChartCanvas"></canvas>
+                </div>
+                <!-- /panel content -->
+
+            </div>
+            <!-- /Radar Graph -->
+
             <!-- Donut Graph -->
-            <div id="panel-graphs-morris-r4" class="panel panel-default">
+            <div id="panel-graphs-morris-l2" class="panel panel-default">
 
                 <div class="panel-heading">
 
@@ -30,19 +87,21 @@
 
             </div>
             <!-- /Donut Graph -->
+
         </div>
 
 
         <!-- RIGHT -->
         <div class="col-md-6">
-            <!-- FLOT CHART -->
-            <div id="panel-graphs-flot-1" class="panel panel-default">
+
+            <!-- Polar Graph -->
+            <div id="panel-graphs-morris-r1" class="panel panel-default">
 
                 <div class="panel-heading">
 
                     <span class="elipsis">
-                        <strong>FLOT Charts </strong>
-                        <small class="size-12 weight-300 text-mutted hidden-xs"></small>
+                        <strong>Chart JS</strong>
+                        <small class="size-12 weight-300 text-mutted hidden-xs">POLAR</small>
                     </span>
 
                     <!-- right options -->
@@ -56,12 +115,70 @@
 
                 <!-- panel content -->
                 <div class="panel-body nopadding">
-                    <div id="flot-pie" class="flot-chart"><!-- GRAPH CONTAINER --></div>
+                    <canvas class="chartjs height-400" id="polarAreaChartCanvas"></canvas>
+                </div>
+                <!-- /panel content -->
+
+            </div>
+            <!-- /Polar Graph -->
+
+            <!-- PIE Graph -->
+            <div id="panel-graphs-morris-r3" class="panel panel-default">
+
+                <div class="panel-heading">
+
+                    <span class="elipsis">
+                        <strong>Chart JS</strong>
+                        <small class="size-12 weight-300 text-mutted hidden-xs">DONUT</small>
+                    </span>
+
+                    <!-- right options -->
+                    <ul class="options pull-right list-inline">
+                        <li><a href="#" class="opt panel_colapse" data-toggle="tooltip" title="Colapse" data-placement="bottom"></a></li>
+                        <li><a href="#" class="opt panel_fullscreen hidden-xs" data-toggle="tooltip" title="Fullscreen" data-placement="bottom"><i class="fa fa-expand"></i></a></li>
+                        <li><a href="#" class="opt panel_close" data-confirm-title="Confirm" data-confirm-message="Are you sure you want to remove this panel?" data-toggle="tooltip" title="Close" data-placement="bottom"><i class="fa fa-times"></i></a></li>
+                    </ul>
+                    <!-- /right options -->
+                </div>
+
+                <!-- panel content -->
+                <div class="panel-body nopadding">
+                    <canvas class="chartjs height-400" id="doughnutChartCanvas"></canvas>
+                </div>
+                <!-- /panel content -->
+
+            </div>
+            <!-- /Radar Graph -->
+
+
+            <!-- FLOT CHART -->
+            <div id="panel-graphs-flot-1" class="panel panel-default">
+
+                <div class="panel-heading">
+
+                    <span class="elipsis">
+                        <strong>FLOT Charts </strong>
+                        <small class="size-12 weight-300 text-mutted hidden-xs">DONUT</small>
+                    </span>
+
+                    <!-- right options -->
+                    <ul class="options pull-right list-inline">
+                        <li><a href="#" class="opt panel_colapse" data-toggle="tooltip" title="Colapse" data-placement="bottom"></a></li>
+                        <li><a href="#" class="opt panel_fullscreen hidden-xs" data-toggle="tooltip" title="Fullscreen" data-placement="bottom"><i class="fa fa-expand"></i></a></li>
+                        <li><a href="#" class="opt panel_close" data-confirm-title="Confirm" data-confirm-message="Are you sure you want to remove this panel?" data-toggle="tooltip" title="Close" data-placement="bottom"><i class="fa fa-times"></i></a></li>
+                    </ul>
+                    <!-- /right options -->
+                </div>
+
+                <!-- panel content -->
+                <div class="panel-body nopadding">
+                    <div id="flot-pie" class="flot-chart height-300 margin-top-20 margin-bottom-20"><!-- GRAPH CONTAINER --></div>
                 </div>
                 <!-- /panel content -->
 
             </div>
             <!-- /FLOT CHART -->
+
         </div>
 
     </div>

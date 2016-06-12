@@ -3,15 +3,19 @@ define(function () {
 
     angular
     .module('app')
-    .registerController('PieChartController', ['$scope', '$q', 'DataService', 'MorrisChartService', 'FlotChartService',
+    .registerController('PieChartController', ['$scope', '$q', 'DataService', 'MorrisChartService', 'FlotChartService', 'ChartJSService',
 
-        function ($scope, $q, DataService, MorrisChartService, FlotChartService) {
+        function ($scope, $q, DataService, MorrisChartService, FlotChartService, ChartJSService) {
 
             /// ---------------------------------------------------------------------------------
             /// LOCAL VARIABLE FOR STORING DATA FROM JSON FILE
             /// ---------------------------------------------------------------------------------
             $scope.donutData = [];
             $scope.flotPieData = [];
+            $scope.polarData = [];
+            $scope.jsDonutData = [];
+            $scope.jsPieData = [];
+            $scope.jsRadarData = {};
 
 
             /// ---------------------------------------------------------------------------------
@@ -23,18 +27,10 @@ define(function () {
                     function (response) {
                         $scope.donutData = response.data.donutData;
                         $scope.flotPieData = response.data.flotPieData;
-                        /*
-                        var data_pie = [];
-                        var series = Math.floor(Math.random() * 10) + 1;
-                        for (var i = 0; i < series; i++) {
-                            data_pie[i] = {
-                                label: "Series" + (i + 1),
-                                data: Math.floor(Math.random() * 100) + 1
-                            };
-                        }
-
-                        console.log(JSON.stringify(data_pie));
-                        */
+                        $scope.polarData = response.data.polarData;
+                        $scope.jsDonutData = response.data.jsDonutData;
+                        $scope.jsPieData = response.data.jsPieData;
+                        $scope.jsRadarData = response.data.jsRadarData.datasets;
                         defered.resolve();
                     },
                     function (error) {
@@ -63,10 +59,46 @@ define(function () {
 
 
             /// ---------------------------------------------------------------------------------
+            /// CHART JS (POLAR)
+            /// ---------------------------------------------------------------------------------
+            var createPolarChart = function () {
+                ChartJSService.createPolarChart("polarAreaChartCanvas", $scope.polarData);
+            };
+
+
+            /// ---------------------------------------------------------------------------------
+            /// CHART JS (RADAR)
+            /// ---------------------------------------------------------------------------------
+            var createRadarChart = function () {
+                ChartJSService.createRadarChart("radarChartCanvas", $scope.jsRadarData);
+            };
+
+
+            /// ---------------------------------------------------------------------------------
+            /// CHART JS (PIE)
+            /// ---------------------------------------------------------------------------------
+            var createPieChart = function () {
+                ChartJSService.createPieChart("pieChartCanvas", $scope.jsPieData);
+            };
+
+
+            /// ---------------------------------------------------------------------------------
+            /// CHART JS (DONUT)
+            /// ---------------------------------------------------------------------------------
+            var createDountChart = function () {
+                ChartJSService.createDountChart("doughnutChartCanvas", $scope.jsDonutData);
+            };
+            
+            
+            /// ---------------------------------------------------------------------------------
             /// INITIALISE
             /// ---------------------------------------------------------------------------------
             getData().then(
                 function () {
+                    createRadarChart();
+                    createPolarChart();                    
+                    createPieChart();
+                    createDountChart();
                     createMorrisDonutChart();
                     createFlotChart();
                 }

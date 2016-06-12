@@ -12,6 +12,7 @@ define(function () {
         /// ---------------------------------------------------------------------------------
         /// CHART VARIABLES
         /// ---------------------------------------------------------------------------------
+        var alphaLabels = ["A", "B", "C", "D", "E", "F", "G"];
         var labels = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         var colours = [{ fillColor: "rgba(220,220,220,0.2)", strokeColor: "rgba(220,220,220,1)" },
                        { fillColor: "rgba(151,187,205,0.2)", strokeColor: "rgba(151,187,205,1)" }];
@@ -31,6 +32,25 @@ define(function () {
         };
         var lineChartDefaults = {
             labels: labels,
+            datasets: []
+        };
+
+
+        /// ---------------------------------------------------------------------------------
+        /// LINE CHART DEFAULTS
+        /// ---------------------------------------------------------------------------------
+        var radarDataSet = {
+            label: "",
+            fillColor: "rgba(220,220,220,0.2)",
+            strokeColor: "rgba(220,220,220,1)",
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: []
+        };
+        var radarChartDefaults = {
+            labels: alphaLabels,
             datasets: []
         };
 
@@ -128,6 +148,55 @@ define(function () {
 
 
         /// ---------------------------------------------------------------------------------
+        /// POLAR CHART
+        /// ---------------------------------------------------------------------------------
+        var createPolarChart = function (elem, data) {
+            injectPlugins().then(function () {
+                var ctx = document.getElementById(elem).getContext("2d");
+                new Chart(ctx).PolarArea(data);
+            });
+        };
+
+
+        /// ---------------------------------------------------------------------------------
+        /// PIE CHART
+        /// ---------------------------------------------------------------------------------
+        var createPieChart = function (elem, data) {
+            injectPlugins().then(function () {
+                var ctx = document.getElementById(elem).getContext("2d");
+                new Chart(ctx).Pie(data);
+            });
+        };
+
+
+        /// ---------------------------------------------------------------------------------
+        /// DONUT CHART
+        /// ---------------------------------------------------------------------------------
+        var createDountChart = function (elem, data) {
+            injectPlugins().then(function () {
+                var ctx = document.getElementById(elem).getContext("2d");
+                new Chart(ctx).Doughnut(data);
+            });
+        };
+
+
+        /// ---------------------------------------------------------------------------------
+        /// RADAR CHART
+        /// ---------------------------------------------------------------------------------
+        var createRadarChart = function (elem, datasets) {
+            injectPlugins().then(function () {
+                var newOptions = angular.copy(radarChartDefaults);
+                angular.forEach(datasets, function (dataSet, idx) {
+                    var set = angular.extend({}, radarDataSet, dataSet);
+                    newOptions.datasets.push(set);
+                });
+                var ctx = document.getElementById(elem).getContext("2d");
+                new Chart(ctx).Radar(newOptions);
+            });
+        };
+
+
+        /// ---------------------------------------------------------------------------------
         /// INJECT PLUGINS
         /// ---------------------------------------------------------------------------------
         var injectPlugins = function () {
@@ -146,6 +215,10 @@ define(function () {
         service.createLineChart = createLineChart;
         service.createAreaChart = createAreaChart;
         service.createBarChart = createBarChart;
+        service.createPolarChart = createPolarChart;
+        service.createDountChart = createDountChart;
+        service.createPieChart = createPieChart;
+        service.createRadarChart = createRadarChart;
         return service;
     }
 
