@@ -8,9 +8,10 @@ define(['routeConfig',
         '../services/chartJSService',
         '../directives/easypieStatDirective',
         '../services/morrisChartService',
-        '../directives/easypieGraphDirective'],
+        '../directives/easypieGraphDirective',
+        '../services/sparklineService'],
 
-    function (routes, appRunners, dataService, flotChartService, easypieChartService, chartJSService, easypieStatDirective, morrisChartService, easypieGraphDirective) {
+    function (routes, appRunners, dataService, flotChartService, easypieChartService, chartJSService, easypieStatDirective, morrisChartService, easypieGraphDirective, sparklineService) {
 
         /// ---------------------------------------------------------------------------------
         /// THIS IS OUR MAIN MODULE
@@ -42,7 +43,8 @@ define(['routeConfig',
         app.factory('EasyPieChartService', easypieChartService);
         app.factory('ChartJSService', chartJSService);
         app.factory('MorrisChartService', morrisChartService);
-
+        app.factory('SparklineService', sparklineService);
+        
         
         /// ---------------------------------------------------------------------------------
         /// DIRECTIVES

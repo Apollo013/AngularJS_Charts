@@ -72,6 +72,21 @@ define([], function () {
                 }]
             }
         })
+        .when('/inlinecharts', {
+            title: 'In-Line Charts',
+            description: 'Inline charts using Sparkline Charts',
+            templateUrl: 'views/inlineCharts.html',
+            controller: 'InLineChartController',
+            resolve: {
+                load: ['$q', function ($q) {
+                    var defered = $q.defer();
+                    require(['../controllers/inLineChartController'], function () {
+                        defered.resolve();
+                    });
+                    return defered.promise;
+                }]
+            }
+        })
         .otherwise({ redirectTo: '/areacharts' });
 
         /// ---------------------------------------------------------------------------------

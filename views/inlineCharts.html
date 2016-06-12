@@ -1,0 +1,112 @@
+﻿<div id="content" class="dashboard padding-20">
+    <!-- Sparkline -->
+    <div id="graph-sparkline" class="panel panel-default">
+
+        <div class="panel-heading">
+
+            <span class="elipsis">
+                <!-- panel title -->
+                <strong>Sparkline</strong>
+            </span>
+
+            <!-- right options -->
+            <ul class="options pull-right list-inline">
+                <li><a href="#" class="opt panel_colapse" data-toggle="tooltip" title="Colapse" data-placement="bottom"></a></li>
+                <li><a href="#" class="opt panel_fullscreen hidden-xs" data-toggle="tooltip" title="Fullscreen" data-placement="bottom"><i class="fa fa-expand"></i></a></li>
+                <li><a href="#" class="opt panel_close" data-confirm-title="Confirm" data-confirm-message="Are you sure you want to remove this panel?" data-toggle="tooltip" title="Close" data-placement="bottom"><i class="fa fa-times"></i></a></li>
+            </ul>
+            <!-- /right options -->
+
+        </div>
+
+        <!-- panel content -->
+        <div class="panel-body">
+
+
+            <!--
+                TYPE:	'line', 'bar', 'tristate', 'discrete', 'bullet', 'pie' or 'box'
+
+                USAGE: 	data-plugin-options='{"type":"bar","barColor":"#D9534F","height":"26px","barWidth":"5","barSpacing":"2"}'
+            -->
+            <p>
+                Inline 				<span class="sparkline" data-plugin-options='{"barColor":"#D9534F","height":"26px"}'>10,8,9,3,5,8,5</span> <br />
+                <code class="fsize11 text-muted hidden-md">
+                    &lt;span class="sparkline" data-plugin-options='{"barColor":"#D9534F","height":"26px"}'&gt;10,8,9,3,5,8,5&lt;/span&gt;
+                </code><br /><br class="hidden-md" /><br class="hidden-md" />
+
+                line graphs 		<span class="sparkline" data-plugin-options='{"barColor":"#D9534F","height":"26px"}'>8,4,0,0,0,0,1,4,4,10,10,10,10,0,0,0,4,6,5,9,10</span><br />
+                <code class="fsize11 text-muted hidden-md">
+                    &lt;span class="sparkline" data-plugin-options='{"barColor":"#D9534F","height":"26px"}'&gt;8,4,0,0,0,0,1,4,4,10,10,10,10,0,0,0,4,6,5,9,10&lt;/span&gt;
+                </code><br /><br class="hidden-md" />
+
+            </p>
+
+
+            <p>
+                Bar charts 			<span class="sparkline" data-plugin-options='{"type":"bar","barColor":"#D9534F","height":"26px","barWidth":"5","barSpacing":"2"}'>9,6,5,6,6,7,7,6,7,8,9,7</span> &nbsp; &nbsp; &nbsp;
+                <span class="sparkline" data-plugin-options='{"type":"bar","barColor":"#5CB85C","height":"26px","barWidth":"5","barSpacing":"2"}'>9,6,5,6,6,7,7,6,7,8,9,7</span> &nbsp; &nbsp; &nbsp;
+                <span class="sparkline" data-plugin-options='{"type":"bar","barColor":"#687482","height":"26px","barWidth":"5","barSpacing":"2"}'>9,6,5,6,6,7,7,6,7,8,9,7</span><br />
+                <code class="fsize11 text-muted hidden-md">
+                    &lt;span class="sparkline" data-plugin-options='{"type":"bar","barColor":"#D9534F","height":"26px","barWidth":"5","barSpacing":"2"}'&gt;9,6,5,6,6,7,7,6,7,8,9,7&lt;/span&gt; <br />
+                </code><br /><br class="hidden-md" />
+
+                Negative values: 	<span class="sparkline" data-plugin-options='{"type":"bar","barColor":"#D9534F","height":"26px","barWidth":"5","barSpacing":"2"}'>-3,1,2,0,3,-1</span><br />
+                <code class="fsize11 text-muted hidden-md">
+                    &lt;span class="sparkline" data-plugin-options='{"type":"bar","barColor":"#D9534F","height":"26px","barWidth":"5","barSpacing":"2"}'&gt;-3,1,2,0,3,-1&lt;/span&gt; <br />
+                </code><br /><br class="hidden-md" />
+
+                Stacked: 			<span class="sparkline" data-plugin-options='{"type":"bar","barColor":"#D9534F","height":"26px","barWidth":"5","barSpacing":"2"}'>0:2,2:4,4:2,4:1</span><br />
+                <code class="fsize11 text-muted hidden-md">
+                    Stacked &lt;span class="sparkline" data-plugin-options='{"type":"bar","barColor":"#D9534F","height":"26px","barWidth":"5","barSpacing":"2"}'&gt;0:2,2:4,4:2,4:1&lt;/span&gt; <br />
+                </code><br /><br class="hidden-md" />
+
+            </p>
+
+
+            <p>
+                Discrete
+                <span class="sparkline" data-plugin-options='{"type":"discrete","lineColor":"blue","height":"26px"}'>4,6,7,7,4,3,2,1,4,4,5,6,7,6,6,2,4,5</span><br />
+                <code class="fsize11 text-muted hidden-md">
+                    &lt;span class="sparkline" data-plugin-options='{"type":"discrete","lineColor":"blue","height":"26px"}'&gt;4,6,7,7,4,3,2,1,4,4,5,6,7,6,6,2,4,5&lt;/span&gt; <br />
+                </code><br /><br class="hidden-md" />
+
+                Discrete with treshold
+                <span class="sparkline" data-plugin-options='{"type":"discrete","lineColor":"blue","thresholdColor":"red","thresholdValue":"4","height":"26px"}'>4,6,7,7,4,3,2,1,4</span><br />
+                <code class="fsize11 text-muted hidden-md">
+                    &lt;span class="sparkline" data-plugin-options='{"type":"discrete","lineColor":"blue","thresholdColor":"red","thresholdValue":"4","height":"26px"}'&gt;4,6,7,7,4,3,2,1,4&lt;/span&gt; <br />
+                </code><br class="hidden-md" />
+
+            </p>
+
+
+            <p>
+                Bullet		<span class="sparkline" data-plugin-options='{"type":"bullet","height":"26px"}'>10,12,12,9,7</span><br />
+                <code class="fsize11 text-muted hidden-md">
+                    &lt;span class="sparkline" data-plugin-options='{"type":"bullet","height":"26px"}'&gt;10,12,12,9,7&lt;/span&gt; <br />
+                </code><br class="hidden-md" />
+            </p>
+
+
+            <p>
+                Box		<span class="sparkline" data-plugin-options='{"type":"box","height":"26px"}'>4,27,34,52,54,59,61,68,78,82,85,87,91,93,100</span><br />
+                <code class="fsize11 text-muted hidden-md">
+                    &lt;span class="sparkline" data-plugin-options='{"type":"box","height":"26px"}'&gt;4,27,34,52,54,59,61,68,78,82,85,87,91,93,100&lt;/span&gt; <br />
+                </code><br class="hidden-md" />
+            </p>
+
+            <p>
+                Pie Chart
+                <span class="sparkline" data-plugin-options='{"type":"pie","height":"26px"}'>1,1,2</span>
+                <span class="sparkline" data-plugin-options='{"type":"pie","height":"26px"}'>1,5</span>
+                <span class="sparkline" data-plugin-options='{"type":"pie","height":"26px"}'>20,50,80</span><br />
+                <code class="fsize11 text-muted hidden-md">
+                    &lt;span class="sparkline" data-plugin-options='{"type":"pie","height":"26px"}'&gt;20,50,80&lt;/span&gt; <br />
+                </code><br class="hidden-md" />
+            </p>
+
+        </div>
+        <!-- /panel content -->
+
+    </div>
+    <!-- /Sparkline -->
+</div>
