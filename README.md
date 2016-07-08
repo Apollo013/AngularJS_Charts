@@ -49,3 +49,9 @@ A Web Application project (no solution file) built with VS 2015 Community
 |Directives|
 |Runners|
 |$http service that reads data from json files|
+
+####Resources
+|Title|Author|Publisher|
+|-----|------|---------|
+|[Dynamically Loading Controllers and Views with AngularJS/$controllerProvider and RequireJS](http://weblogs.asp.net/dwahlin/dynamically-loading-controllers-and-views-with-angularjs-and-requirejs)| Dan Wahlin | |
+|[AngularJS Dynamic Templates](http://onehungrymind.com/angularjs-dynamic-templates/)|Lukas Ruebbelke|NEHUNGRYMIND|
