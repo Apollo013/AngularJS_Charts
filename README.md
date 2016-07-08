@@ -50,6 +50,8 @@ A Web Application project (no solution file) built with VS 2015 Community
 |Runners|
 |$http service that reads data from json files|
 
+---
+
 ####Resources
 |Title|Author|Publisher|
 |-----|------|---------|
