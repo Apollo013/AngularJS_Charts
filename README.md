@@ -10,16 +10,6 @@ A Web Application project (no solution file) developed with Visual Studio 2015 C
 
 ---
 
-####Main Features
-|Feature|
-|-------|
-|Various chart creation using a number of chart plugins|
-|Asynchronous module loading using RequireJS|
-|Lazy Loading modules using AngularJS |
-|Accessing Json files |
-
----
-
 ### Main Techs
 |Tech|
 |--------|
@@ -32,7 +22,7 @@ A Web Application project (no solution file) developed with Visual Studio 2015 C
 
 ---
 
-####Chart Plugins
+### Chart Plugins
 |Plugin|
 |------|
 |Morris Charts|
@@ -44,7 +34,17 @@ A Web Application project (no solution file) developed with Visual Studio 2015 C
 
 ---
 
-####AngularJS Features
+### Main Features
+|Feature|
+|-------|
+|Various chart creation using a number of chart plugins|
+|Asynchronous module loading using RequireJS|
+|Lazy Loading modules using AngularJS |
+|Accessing Json files |
+
+---
+
+### AngularJS Features
 |Feature|
 |-------|
 |Controllers|
@@ -55,7 +55,7 @@ A Web Application project (no solution file) developed with Visual Studio 2015 C
 
 ---
 
-####Resources
+### Resources
 |Title|Author|Publisher|
 |-----|------|---------|
 |[Dynamically Loading Controllers and Views with AngularJS/$controllerProvider and RequireJS](http://weblogs.asp.net/dwahlin/dynamically-loading-controllers-and-views-with-angularjs-and-requirejs)| Dan Wahlin | |
