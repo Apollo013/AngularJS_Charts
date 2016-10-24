@@ -1,9 +1,12 @@
 # AngularJS_Charts
+
+---
+### Description
 This app demonstrates how to create area, line, bar &amp; pie charts using Chartjs, FlotCharts, Morris Charts EasyPie Charts &amp; Sparkline. It also demonstartes Asynchronous Module Loading with RequireJS and Lazy Loading Controllers in AngularJS. Hosted On Azure.
 
 ---
 
-A Web Application project (no solution file) built with VS 2015 Community
+A Web Application project (no solution file) developed with Visual Studio 2015 Community
 
 ---
 
@@ -17,8 +20,8 @@ A Web Application project (no solution file) built with VS 2015 Community
 
 ---
 
-####Languages / Frameworks
-|Language|
+### Main Techs
+|Tech|
 |--------|
 |AngularJS|
 |RequireJS|
